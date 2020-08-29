@@ -8,10 +8,15 @@ import com.qiniu.util.Auth;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.InputStream;
+import java.net.URI;
 import java.util.UUID;
 
 /**
@@ -35,8 +40,11 @@ public class OssFileUploader {
     @Value("${oss.qiniu.bucket}")
     private String bucket;
 
+    @Resource
+    private RestTemplate restTemplate;
+
     /**
-     * 上传字节数组
+     * 上传字节数组 使用uuid作为文件名
      *
      * @param data   字节数组
      * @param format 文件扩展名
@@ -63,7 +71,7 @@ public class OssFileUploader {
     }
 
     /**
-     * 上传字节流
+     * 上传字节流 使用uuid作为文件名
      *
      * @param inputStream 字节流
      * @param format      文件扩展名
@@ -90,7 +98,7 @@ public class OssFileUploader {
     }
 
     /**
-     * 上传本地文件
+     * 上传本地文件 使用uuid作为文件名
      *
      * @param file   待上传的本地文件
      * @param format 文件扩展名
@@ -114,6 +122,26 @@ public class OssFileUploader {
     public String uploadWithFileName(File file, String fileName) {
         this.uploadToOss(file, fileName);
         return getFormattedBaseUrl() + fileName;
+    }
+
+    /**
+     * 根据网络地址上传文件
+     * http://xxx.com/xxx.png
+     *
+     * @param url
+     * @return
+     */
+    public String uploadFileFromWebUrl(String url) {
+        try {
+            String[] arr = url.split("/");
+            String fileName = arr[arr.length - 1];
+            URI uri = new URI(url);
+            ResponseEntity<byte[]> responseEntity = restTemplate.exchange(uri, HttpMethod.GET, null, byte[].class);
+            this.uploadWithFileName(responseEntity.getBody(), fileName);
+            return getFormattedBaseUrl() + fileName;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**

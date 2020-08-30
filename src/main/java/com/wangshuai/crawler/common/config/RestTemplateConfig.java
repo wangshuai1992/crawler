@@ -44,6 +44,12 @@ public class RestTemplateConfig {
     @Value("${crawler.http.maxperroute}")
     private int maxPerRoute;
 
+    @Value("${crawler.http.log.lengthlimit}")
+    private int logLengthLimit;
+
+    @Value("${hacpai.cookies}")
+    private String hacpaiCookies;
+
     @Bean
     public HttpClient httpClient() {
         Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory>create()
@@ -80,8 +86,11 @@ public class RestTemplateConfig {
                 throws IOException {
             HttpHeaders headers = request.getHeaders();
             headers.add("Cache-Control", "no-cache");
+            headers.add("Cookie", hacpaiCookies);
 //            headers.add("Content-Type", "application/json");
             headers.add("Host", request.getURI().getHost());
+//            headers.add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0");
+            headers.add("User-Agent", "PostmanRuntime/7.26.1");
             return this.executeWithLog(request, body, execution);
         }
 
@@ -100,7 +109,7 @@ public class RestTemplateConfig {
         private String traceRequest(HttpRequest request, byte[] body) {
             JSONObject jsonObject = new JSONObject(true);
             jsonObject.put("URI", request.getURI());
-            jsonObject.put("Request body", CommonUtil.limitedString(new String(body, StandardCharsets.UTF_8), 1000));
+            jsonObject.put("Request body", CommonUtil.limitedString(new String(body, StandardCharsets.UTF_8), logLengthLimit));
             jsonObject.put("Method", request.getMethod());
             jsonObject.put("Headers", request.getHeaders());
             return "==== rest request ===== " + jsonObject.toJSONString();
@@ -112,7 +121,7 @@ public class RestTemplateConfig {
                 jsonObject.put("Status code", response.getRawStatusCode());
                 jsonObject.put("Status text", response.getStatusText());
                 jsonObject.put("Response body", CommonUtil
-                        .limitedString(StreamUtils.copyToString(response.getBody(), StandardCharsets.UTF_8), 1000));
+                        .limitedString(StreamUtils.copyToString(response.getBody(), StandardCharsets.UTF_8), logLengthLimit));
                 jsonObject.put("Headers", response.getHeaders());
                 return "==== rest response ==== " + jsonObject.toJSONString();
             } catch (Exception e) {

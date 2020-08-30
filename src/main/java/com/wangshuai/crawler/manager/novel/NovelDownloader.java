@@ -40,7 +40,7 @@ public class NovelDownloader {
     /**
      * host
      */
-    private String host = "http://www.dobiez.com";
+    private String host = "http://www.xxxx.com";
 
     /**
      * http操作

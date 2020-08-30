@@ -24,6 +24,14 @@ public interface HacpaiArticleMapper {
     int insert(HacpaiArticleDO record);
 
     /**
+     * 重复则更新
+     *
+     * @param record
+     * @return
+     */
+    int insertOrUpdate(HacpaiArticleDO record);
+
+    /**
      * 批量新增
      *
      * @param records

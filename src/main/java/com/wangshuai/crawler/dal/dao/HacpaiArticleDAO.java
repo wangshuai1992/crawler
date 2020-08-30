@@ -47,6 +47,12 @@ public class HacpaiArticleDAO {
         }
     }
 
+    public void insertOrUpdate(HacpaiArticleDO record) {
+        if (record != null) {
+            mapper.insertOrUpdate(record);
+        }
+    }
+
     public void batchInsert(List<HacpaiArticleDO> records) {
         if (!CollectionUtils.isEmpty(records)) {
             mapper.batchInsert(records);

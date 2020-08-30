@@ -40,6 +40,35 @@
         )
     </insert>
 
+    <insert id="insertOrUpdate" parameterType="com.wangshuai.crawler.dal.dataobject.HacpaiArticleDO"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO hacpai_article (
+        <include refid="column_List"/>
+        ) VALUES (
+        null,
+        #{articleId},
+        #{articleTitle},
+        #{articlePreview},
+        #{articleContent},
+        #{postTime},
+        now(),
+        now()
+        ) ON DUPLICATE KEY UPDATE
+        <if test="articleTitle != null and articleTitle != '' ">
+            article_title = #{articleTitle},
+        </if>
+        <if test="articlePreview != null and articlePreview != '' ">
+            article_preview = #{articlePreview},
+        </if>
+        <if test="articleContent != null and articleContent != '' ">
+            article_content = #{articleContent},
+        </if>
+        <if test="postTime != null">
+            post_time = #{postTime},
+        </if>
+        update_time = now()
+    </insert>
+
     <insert id="batchInsert" parameterType="list" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO hacpai_article (
         <include refid="column_List"/>

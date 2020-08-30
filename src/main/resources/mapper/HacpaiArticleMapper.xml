@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangshuai.crawler.dal.mapper.HacpaiArticleMapper">
+
+    <resultMap id="baseResult" type="com.wangshuai.crawler.dal.dataobject.HacpaiArticleDO">
+        <result property="id" column="id"/>
+        <result property="articleId" column="article_id"/>
+        <result property="articleTitle" column="article_title"/>
+        <result property="articlePreview" column="article_preview"/>
+        <result property="articleContent" column="article_content"/>
+        <result property="postTime" column="post_time"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="column_List">
+        hacpai_article.id,
+        hacpai_article.article_id,
+        hacpai_article.article_title,
+        hacpai_article.article_preview,
+        hacpai_article.article_content,
+        hacpai_article.post_time,
+        hacpai_article.create_time,
+        hacpai_article.update_time
+    </sql>
+
+    <insert id="insert" parameterType="com.wangshuai.crawler.dal.dataobject.HacpaiArticleDO"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO hacpai_article (
+        <include refid="column_List"/>
+        ) VALUES (
+        null,
+        #{articleId},
+        #{articleTitle},
+        #{articlePreview},
+        #{articleContent},
+        #{postTime},
+        now(),
+        now()
+        )
+    </insert>
+
+    <insert id="batchInsert" parameterType="list" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO hacpai_article (
+        <include refid="column_List"/>
+        ) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+            null,
+            #{item.articleId},
+            #{item.articleTitle},
+            #{item.articlePreview},
+            #{item.articleContent},
+            #{item.postTime},
+            now(),
+            now()
+            )
+        </foreach>
+    </insert>
+
+    <update id="update" parameterType="com.wangshuai.crawler.dal.dataobject.HacpaiArticleDO">
+        UPDATE hacpai_article
+        <set>
+            <if test="articleId != null">
+                article_id = #{articleId},
+            </if>
+            <if test="articleTitle != null and articleTitle != '' ">
+                article_title = #{articleTitle},
+            </if>
+            <if test="articlePreview != null and articlePreview != '' ">
+                article_preview = #{articlePreview},
+            </if>
+            <if test="articleContent != null and articleContent != '' ">
+                article_content = #{articleContent},
+            </if>
+            <if test="postTime != null">
+                post_time = #{postTime},
+            </if>
+            update_time = now()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <update id="batchUpdateById" parameterType="list">
+        <foreach collection="list" item="item" open="" close="" separator=";">
+            UPDATE hacpai_article
+            <set>
+                <if test="item.articleId != null">
+                    article_id = #{item.articleId},
+                </if>
+                <if test="item.articleTitle != null and item.articleTitle != '' ">
+                    article_title = #{item.articleTitle},
+                </if>
+                <if test="item.articlePreview != null and item.articlePreview != '' ">
+                    article_preview = #{item.articlePreview},
+                </if>
+                <if test="item.articleContent != null and item.articleContent != '' ">
+                    article_content = #{item.articleContent},
+                </if>
+                <if test="item.postTime != null">
+                    post_time = #{item.postTime},
+                </if>
+                update_time = now()
+            </set>
+            WHERE id = #{item.id}
+        </foreach>
+    </update>
+
+    <update id="deleteById" parameterType="java.lang.Long">
+        DELETE FROM hacpai_article
+        WHERE id = #{id}
+    </update>
+
+    <update id="deleteByIds" parameterType="java.util.List">
+        DELETE FROM hacpai_article
+        WHERE id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="findById" resultMap="baseResult" parameterType="java.lang.Long">
+        SELECT
+        <include refid="column_List"/>
+        FROM hacpai_article
+        WHERE id = #{id}
+    </select>
+
+    <sql id="query_condition">
+        <where>
+            <if test="id != null">
+                AND hacpai_article.id = #{id}
+            </if>
+            <if test="articleId != null">
+                AND hacpai_article.article_id = #{articleId}
+            </if>
+            <if test="articleTitle != null and articleTitle != '' ">
+                AND hacpai_article.article_title = #{articleTitle}
+            </if>
+            <if test="articlePreview != null and articlePreview != '' ">
+                AND hacpai_article.article_preview = #{articlePreview}
+            </if>
+            <if test="articleContent != null and articleContent != '' ">
+                AND hacpai_article.article_content = #{articleContent}
+            </if>
+            <if test="postTime != null">
+                AND hacpai_article.post_time = #{postTime}
+            </if>
+            <if test="createTime != null ">
+                AND hacpai_article.create_time = #{createTime}
+            </if>
+            <if test="updateTime != null ">
+                AND hacpai_article.update_time = #{updateTime}
+            </if>
+        </where>
+    </sql>
+
+    <select id="countByQuery" parameterType="com.wangshuai.crawler.dal.query.HacpaiArticleQuery"
+            resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM hacpai_article
+        <include refid="query_condition"/>
+    </select>
+
+    <select id="pageQuery" resultMap="baseResult"
+            parameterType="com.wangshuai.crawler.dal.query.HacpaiArticleQuery">
+        SELECT
+        <include refid="column_List"/>
+        FROM hacpai_article
+        <include refid="query_condition"/>
+        ORDER BY id DESC
+        LIMIT #{startPos},#{pageSize}
+    </select>
+
+    <select id="fullQuery" resultMap="baseResult"
+            parameterType="com.wangshuai.crawler.dal.query.HacpaiArticleQuery">
+        SELECT
+        <include refid="column_List"/>
+        FROM hacpai_article
+        <include refid="query_condition"/>
+    </select>
+
+</mapper>
+

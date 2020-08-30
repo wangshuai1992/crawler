@@ -1,10 +1,12 @@
 package com.wangshuai.crawler.oss;
 
+import com.alibaba.fastjson.JSON;
 import com.qiniu.http.Response;
 import com.qiniu.storage.Configuration;
 import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,6 +28,7 @@ import java.util.UUID;
  * @author wangshuai
  */
 @Component
+@Slf4j
 public class OssFileUploader {
 
     @Value("${oss.qiniu.httpbase}")
@@ -155,6 +158,7 @@ public class OssFileUploader {
             Configuration cfg = new Configuration(Region.huadong());
             UploadManager uploadManager = new UploadManager(cfg);
             Response res = uploadManager.put(data, path, auth.uploadToken(bucket));
+            log.info("====== 七牛上传返回：{}", JSON.toJSONString(res));
             if (!res.isOK()) {
                 throw new RuntimeException("上传七牛出错：" + res.toString());
             }

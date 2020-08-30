@@ -100,7 +100,7 @@ public class RestTemplateConfig {
         private String traceRequest(HttpRequest request, byte[] body) {
             JSONObject jsonObject = new JSONObject(true);
             jsonObject.put("URI", request.getURI());
-            jsonObject.put("Request body", CommonUtil.limitedString(new String(body, StandardCharsets.UTF_8), 10000));
+            jsonObject.put("Request body", CommonUtil.limitedString(new String(body, StandardCharsets.UTF_8), 1000));
             jsonObject.put("Method", request.getMethod());
             jsonObject.put("Headers", request.getHeaders());
             return "==== rest request ===== " + jsonObject.toJSONString();
@@ -112,7 +112,7 @@ public class RestTemplateConfig {
                 jsonObject.put("Status code", response.getRawStatusCode());
                 jsonObject.put("Status text", response.getStatusText());
                 jsonObject.put("Response body", CommonUtil
-                        .limitedString(StreamUtils.copyToString(response.getBody(), StandardCharsets.UTF_8), 10000));
+                        .limitedString(StreamUtils.copyToString(response.getBody(), StandardCharsets.UTF_8), 1000));
                 jsonObject.put("Headers", response.getHeaders());
                 return "==== rest response ==== " + jsonObject.toJSONString();
             } catch (Exception e) {

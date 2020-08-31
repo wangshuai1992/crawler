@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon" href="images/faviconH.png"/>
 
     <link rel="stylesheet" href="/lib/css/index.css"/>
+    <script src="/lib/js/jquery-3.2.1.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="main">
@@ -71,6 +72,7 @@
 
                 <div class="article-list list">
                     <ul>
+                        <h2 class="fn-ellipsis">Loading...</h2>
 <#--                        <li>-->
 <#--                            <h2 class="fn-ellipsis">-->
 <#--                                <a-->
@@ -130,16 +132,15 @@
   </div> -->
 </div>
 
-<script src="/js/symbol-defs.min.js"></script>
-<script src="/lib/js/compress/libs.min.js"></script>
-<script src="/js/common.min.js"></script>
+<#--<script src="/js/symbol-defs.min.js"></script>-->
+<#--<script src="/lib/js/compress/libs.min.js"></script>-->
+<#--<script src="/js/common.min.js"></script>-->
 
-<script src="/js/channel.min.js"></script>
+<#--<script src="/js/channel.min.js"></script>-->
 <script>
     let currentPage = ${page};
 
     $.getJSON('blog-list.json?pageNo=' + currentPage + '&pageSize=30', function (result) {
-        console.log(result);
         let totalPage = result.totalPage;
         generatePagination(totalPage);
         generateList(result.dataList);
@@ -166,6 +167,7 @@
     }
 
     function generateList(dataList) {
+        $(".article-list ul").empty();
         for(let i in dataList) {
             let data = dataList[i];
             let liDom = $("<li>\n" +

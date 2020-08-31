@@ -51,7 +51,7 @@ public class MainController {
 
     @RequestMapping("/articleDetail")
     public String articleDetail(@RequestParam(value = "articleId") Long articleId, ModelMap modelMap) {
-        modelMap.put("articleId", articleId);
+        modelMap.put("articleId", String.valueOf(articleId));
         return "article/article-detail";
     }
 
@@ -62,5 +62,13 @@ public class MainController {
         query.setPageNo(pageNo);
         query.setPageSize(pageSize);
         return hacpaiArticleDAO.pageQuery(query);
+    }
+
+    @RequestMapping("/get-article.json")
+    @ResponseBody
+    public HacpaiArticleDO getArticleById(@RequestParam(value = "articleId", defaultValue = "1") Long articleId) {
+        HacpaiArticleQuery<HacpaiArticleDO> query = new HacpaiArticleQuery<>();
+        query.setArticleId(articleId);
+        return hacpaiArticleDAO.fullQuery(query).get(0);
     }
 }

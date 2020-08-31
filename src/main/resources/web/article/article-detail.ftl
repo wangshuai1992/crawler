@@ -16,7 +16,6 @@
 
     <link rel="stylesheet" href="/lib/js/compress/article.min.css" />
     <link rel="stylesheet" href="/lib/css/index.css" />
-    <link rel="canonical" href="../article/1597654554383" />
   </head>
   <body itemscope itemtype="http://schema.org/Product" class="article">
     <div class="nav"></div>

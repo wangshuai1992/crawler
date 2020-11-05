@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -31,6 +32,9 @@ public class KlarnaManager {
     private static JSONObject billingAddress;
 
     private static JSONObject customer;
+
+    @Value("${klarna.auth}")
+    private String klarnaAuth;
 
     static {
         info = new JSONObject();
@@ -124,7 +128,7 @@ public class KlarnaManager {
     public JSONObject createSession() {
         String url = host + "/payments/v1/sessions";
         HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.add("Authorization", "Basic UEsyOTA0Ml82ODcxZmVjOWZjNWY6WlVtM2hadzhRRktVMzRYNA==");
+        requestHeaders.add("Authorization", klarnaAuth);
         requestHeaders.add("Content-Type", "application/json");
         JSONObject body = new JSONObject();
         body.put("locale", info.getString("locale"));
@@ -141,7 +145,7 @@ public class KlarnaManager {
     public JSONObject placeOrder(String authorizationToken) {
         String url = host + "/payments/v1/authorizations/" + authorizationToken + "/order";
         HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.add("Authorization", "Basic UEsyOTA0Ml82ODcxZmVjOWZjNWY6WlVtM2hadzhRRktVMzRYNA==");
+        requestHeaders.add("Authorization", klarnaAuth);
         requestHeaders.add("Content-Type", "application/json");
         JSONObject body = new JSONObject();
         body.put("locale", info.getString("locale"));
@@ -159,7 +163,7 @@ public class KlarnaManager {
     public JSONObject createCustomerToken(String authorizationToken) {
         String url = host + "/payments/v1/authorizations/" + authorizationToken + "/customer-token";
         HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.add("Authorization", "Basic UEsyOTA0Ml82ODcxZmVjOWZjNWY6WlVtM2hadzhRRktVMzRYNA==");
+        requestHeaders.add("Authorization", klarnaAuth);
         requestHeaders.add("Content-Type", "application/json");
         JSONObject body = new JSONObject();
         body.put("locale", info.getString("locale"));
@@ -185,7 +189,7 @@ public class KlarnaManager {
     public JSONObject placeOrderByCustomerToken(String customerToken) {
         String url = host + "/customer-token/v1/tokens/" + customerToken + "/order";
         HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.add("Authorization", "Basic UEsyOTA0Ml82ODcxZmVjOWZjNWY6WlVtM2hadzhRRktVMzRYNA==");
+        requestHeaders.add("Authorization", klarnaAuth);
         requestHeaders.add("Content-Type", "application/json");
         JSONObject body = new JSONObject();
         body.put("order_amount", info.getIntValue("order_amount") - 1);
@@ -201,7 +205,7 @@ public class KlarnaManager {
     public JSONObject refundOrder(String orderId) {
         String url = host + "/ordermanagement/v1/orders/" + orderId + "/refunds";
         HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.add("Authorization", "Basic UEsyOTA0Ml82ODcxZmVjOWZjNWY6WlVtM2hadzhRRktVMzRYNA==");
+        requestHeaders.add("Authorization", klarnaAuth);
         requestHeaders.add("Content-Type", "application/json");
         JSONObject body = new JSONObject();
         body.put("refunded_amount", info.getIntValue("order_amount"));
@@ -213,7 +217,7 @@ public class KlarnaManager {
     public JSONObject captureOrder(String orderId) {
         String url = host + "/ordermanagement/v1/orders/" + orderId + "/captures";
         HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.add("Authorization", "Basic UEsyOTA0Ml82ODcxZmVjOWZjNWY6WlVtM2hadzhRRktVMzRYNA==");
+        requestHeaders.add("Authorization", klarnaAuth);
         requestHeaders.add("Content-Type", "application/json");
         JSONObject body = new JSONObject();
         body.put("captured_amount", info.getIntValue("order_amount"));

@@ -1,0 +1,1414 @@
+[
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Shipping",
+        "levelTwo": "Shipping Consultation",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 1
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Shipping",
+        "levelTwo": "Shipping Complaint",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Aftersale",
+        "levelTwo": "Exchange policy",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 3
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Aftersale",
+        "levelTwo": "Refund",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 4
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Aftersale",
+        "levelTwo": "Return",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 5
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "OnSales",
+        "levelTwo": "Out of stock",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 6
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "OnSales",
+        "levelTwo": "Order cancellation",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 7
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "OnSales",
+        "levelTwo": "Order confirmation",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 8
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "OnSales",
+        "levelTwo": "Order Modification",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 9
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "OnSales",
+        "levelTwo": "Special service",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 10
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "OnSales",
+        "levelTwo": "Request for shipping ASAP",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 11
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Presales",
+        "levelTwo": "Account Management",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 12
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Presales",
+        "levelTwo": "Product Details",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 13
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Presales",
+        "levelTwo": "Daily Activities",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 14
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Presales",
+        "levelTwo": "Purchase Guidance",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 15
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "APP bug feedback",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 16
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "Business Cooperation",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 17
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "Customer Service",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 18
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "Physical Store",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 19
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "Privacy Security",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 20
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "Suggestion",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 21
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "Blacklist customer",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 22
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "Fraud",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 23
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "Push ticket",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 24
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": false,
+        "levelOne": "Others",
+        "levelTwo": "vague dialog",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 25
+    },
+    {
+        "description": "Please describe your concern in detail and upload related pictures which help to locate the issue.",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Order Management",
+        "levelTwo": "Need to cancel the order",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "preparing",
+            "shipped"
+        ],
+        "questionId": 1001
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Order Management",
+        "levelTwo": "Need to change item",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "preparing",
+            "shipped"
+        ],
+        "questionId": 1002
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Order Management",
+        "levelTwo": "Need to change the shipping address or contact info",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "preparing",
+            "shipped"
+        ],
+        "questionId": 1003
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Order Management",
+        "levelTwo": "Others",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "preparing",
+            "shipped"
+        ],
+        "questionId": 1004
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Account issue",
+        "levelTwo": "Bind phone number issue",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 1005
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Account issue",
+        "levelTwo": "Balance withdraw issue ",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 1006
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Account issue",
+        "levelTwo": "Coupon issue",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 1007
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Account issue",
+        "levelTwo": "Others",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 1008
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Promotions/Activities",
+        "levelTwo": "Daily Activities",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [
+            "cancel",
+            "preparing",
+            "shipped",
+            "expired",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 1009
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Promotions/Activities",
+        "levelTwo": "Certain Festival promotions",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [
+            "cancel",
+            "preparing",
+            "shipped",
+            "expired",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 1010
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Promotions/Activities",
+        "levelTwo": "Others",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [
+            "cancel",
+            "preparing",
+            "shipped",
+            "expired",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 1011
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "APP bug",
+        "levelTwo": "Page is blank or incomplete",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [
+            "cancel",
+            "preparing",
+            "shipped",
+            "expired",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 1012
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "APP bug",
+        "levelTwo": "Abnormal price",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [
+            "cancel",
+            "preparing",
+            "shipped",
+            "expired",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 1013
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "APP bug",
+        "levelTwo": "Unable to receive verification code",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [
+            "cancel",
+            "preparing",
+            "shipped",
+            "expired",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 1014
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "APP bug",
+        "levelTwo": "Page pops up errors",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [
+            "cancel",
+            "preparing",
+            "shipped",
+            "expired",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 1015
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "APP bug",
+        "levelTwo": "Payment issue",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "preparing",
+            "shipped",
+            "expired",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 1016
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "APP bug",
+        "levelTwo": "Others",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [
+            "cancel",
+            "preparing",
+            "shipped",
+            "expired",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 1017
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "Overdue/long Shipment",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1018
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "Customs clearance",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1019
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "Need product as soon as possible",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1020
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "Tracking status is \"Lost\" or   \"Damaged\"",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1021
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "Tracking status is \"RTO_Notified\" or   \"RTO\"",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1022
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "It says \"delivered\" but I have not   received it",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1023
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "Extra change by courier boy",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1024
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "Return Pickup issues",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1025
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "Return Mail by myself issue",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1026
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Shipping Problems",
+        "levelTwo": "Others",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1027
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Return",
+        "levelTwo": "How to return",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1028
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Return",
+        "levelTwo": "Return due to product issue",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1029
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Return",
+        "levelTwo": "Return  as I do not need   it",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1030
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Return",
+        "levelTwo": "Return refund rejected",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1031
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Return",
+        "levelTwo": "Non-returnable product",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1032
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Return",
+        "levelTwo": "Unable to return over 9 days of policy",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1033
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Return",
+        "levelTwo": "Return shipping fee",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1034
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Return",
+        "levelTwo": "Others",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1035
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "Received less refund amount",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1036
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "Item or parts missing",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1037
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "APP shows \"refunded\" but I have not   received it",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1038
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "Return delivered but no refund",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1039
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "Tax refund",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1040
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "Empty parcel",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1041
+    },
+    {
+        "description": "",
+        "isActive": false,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "Others",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 1042
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Wholee membership",
+        "levelTwo": "Unsubscribe wholee prime",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2001
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Wholee membership",
+        "levelTwo": "Wholee prime fee",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2002
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Wholee membership",
+        "levelTwo": "Others",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2003
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "presale",
+        "levelTwo": "Product Details",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2004
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "presale",
+        "levelTwo": "Promotion Sales",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2005
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "presale",
+        "levelTwo": "Purchase Guidance",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2006
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "presale",
+        "levelTwo": "Others",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2007
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Payment",
+        "levelTwo": "Already paid but the order is still unpaid",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "expired",
+            "unpaid"
+        ],
+        "questionId": 2008
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Payment",
+        "levelTwo": "Amount was deducted twice",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "expired",
+            "preparing",
+            "shipped",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 2009
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Payment",
+        "levelTwo": "Others",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2010
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Preparing&Shipping",
+        "levelTwo": "Want to cancel order",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "preparing",
+            "shipped"
+        ],
+        "questionId": 2011
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Preparing&Shipping",
+        "levelTwo": "Need to change item",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "preparing"
+        ],
+        "questionId": 2012
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Preparing&Shipping",
+        "levelTwo": "Need to change the shipping address or contact info",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "preparing",
+            "shipped"
+        ],
+        "questionId": 2013
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Preparing&Shipping",
+        "levelTwo": "Need package as soon as possible",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "preparing",
+            "shipped"
+        ],
+        "questionId": 2014
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Preparing&Shipping",
+        "levelTwo": "Tracking status is \"Lost\" or \"Damaged\"",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "shipped"
+        ],
+        "questionId": 2015
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Preparing&Shipping",
+        "levelTwo": "Tracking status is \"RTO_Notified\" or \"RTO\"",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered",
+            "rejection"
+        ],
+        "questionId": 2016
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Preparing&Shipping",
+        "levelTwo": "It says \"delivered\" but I have not received it",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "delivered"
+        ],
+        "questionId": 2017
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Preparing&Shipping",
+        "levelTwo": "Others",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "expired",
+            "preparing",
+            "shipped",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 2018
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Return (product issue)",
+        "levelTwo": "Wrong product",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2019
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Return (product issue)",
+        "levelTwo": "Damage product",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2020
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Return (product issue)",
+        "levelTwo": "Size issue",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2021
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Return (product issue)",
+        "levelTwo": "I do not like it",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2022
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Return (product issue)",
+        "levelTwo": "Poor quality product",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2023
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Return (product issue)",
+        "levelTwo": "Item or parts missing",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2024
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Return (product issue)",
+        "levelTwo": "Wrong parcel",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2025
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Return (product issue)",
+        "levelTwo": "Others",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2026
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "APP shows \"refunded\" but I have not received it",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "preparing",
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2027
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "Tax refund",
+        "needImages": true,
+        "needOrder": true,
+        "orderStates": [
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2028
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "Received less refund amount",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "preparing",
+            "shipped",
+            "delivered"
+        ],
+        "questionId": 2029
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Refund",
+        "levelTwo": "Others",
+        "needImages": false,
+        "needOrder": true,
+        "orderStates": [
+            "cancel",
+            "expired",
+            "preparing",
+            "shipped",
+            "delivered",
+            "unpaid",
+            "rejection"
+        ],
+        "questionId": 2030
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Other",
+        "levelTwo": "Page is blank or incomplete",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2031
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Other",
+        "levelTwo": "Abnormal price",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2032
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Other",
+        "levelTwo": "Unable to receive verification code",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2033
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Other",
+        "levelTwo": "Page pops up errors",
+        "needImages": true,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2034
+    },
+    {
+        "description": "",
+        "isActive": true,
+        "isShowToUser": true,
+        "levelOne": "Other",
+        "levelTwo": "Business Cooperation",
+        "needImages": false,
+        "needOrder": false,
+        "orderStates": [],
+        "questionId": 2035
+    }
+]

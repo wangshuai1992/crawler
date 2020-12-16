@@ -44,4 +44,25 @@ public class ConsultQuestionBO {
 
     private Boolean isActive;
 
+    /**
+     * 关联的faq
+     */
+    private Set<Integer> faqQuestionIds;
+
+    /**
+     * 示例图片
+     */
+    private Set<String> exampleImageUrls;
+
+    /**
+     * 是否需要图片
+     */
+    private Boolean needProduct;
+
+    private Boolean showLinkToCancelOrder;
+
+    private Boolean showLinkToModifyOrderAddress;
+
+    private Boolean showLinkToCancelSubscribe;
+
 }

@@ -1,5 +1,6 @@
 package com.wangshuai.crawler.common.config;
 
+import com.ctrip.framework.apollo.spring.annotation.ApolloJsonValue;
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,5 +14,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableApolloConfig
 public class ApolloConfig {
+
+    @ApolloJsonValue("${test.value}")
+    private static String testValue;
+
+    public static String getTestValue() {
+        return testValue;
+    }
 
 }

@@ -1,5 +1,6 @@
 package com.wangshuai.crawler;
 
+import com.wangshuai.crawler.common.config.ApolloConfig;
 import com.wangshuai.crawler.manager.hacpai.HacpaiManager;
 import com.wangshuai.crawler.oss.OssFileUploader;
 import lombok.extern.slf4j.Slf4j;
@@ -24,9 +25,13 @@ public class TestController {
     @Resource
     private HacpaiManager hacpaiManager;
 
+    @Resource
+    private ApolloConfig apolloConfig;
+
     @RequestMapping("/HJU432MTG/test")
     public Object test() {
-        return ossFileUploader.uploadFileFromWebUrl("http://tech.yuceyi.com/upload/c6e4c324f51946b88003df8e8110f9c2_image.png");
+//        return ossFileUploader.uploadFileFromWebUrl("http://tech.yuceyi.com/upload/c6e4c324f51946b88003df8e8110f9c2_image.png");
+        return ApolloConfig.getTestValue();
     }
 
     @RequestMapping("/HJU432MTG/test1")

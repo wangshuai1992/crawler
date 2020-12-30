@@ -30,4 +30,14 @@ public class BaseQuery implements Serializable {
 	 */
 	protected Date updateTime;
 
+	/**
+	 * 排序字段
+	 */
+	private String sortField;
+
+	/**
+	 * 排序顺序 asc desc
+	 */
+	private String sortOrder;
+
 }

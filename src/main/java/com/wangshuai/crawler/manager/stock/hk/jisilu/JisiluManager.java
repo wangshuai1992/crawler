@@ -112,7 +112,7 @@ public class JisiluManager {
         jisiluDO.setApplyEndDate(cell.getString("apply_end_dt"));
         jisiluDO.setApplyEndDate2(DateUtils.parse(cell.getString("apply_end_dt2"), "yyyy-MM-dd"));
         jisiluDO.setGrayDate(DateUtils.parse(cell.getString("gray_dt"), "yyyy-MM-dd"));
-        jisiluDO.setListDate(cell.getString("listDate"));
+        jisiluDO.setListDate(cell.getString("list_dt"));
         jisiluDO.setListDate2(DateUtils.parse(cell.getString("list_dt2"), "yyyy-MM-dd"));
         if (StringUtils.isNotEmpty(cell.getString("price_range"))) {
             String[] sArr = cell.getString("price_range").split("-");

@@ -37,6 +37,9 @@ public class HacpaiManager {
     @Value("${hacpai.host}")
     private String hacpaiHost;
 
+    @Value("${hacpai.cookies}")
+    private String hacpaiCookies;
+
     @Resource
     private RestTemplate restTemplate;
 
@@ -46,6 +49,7 @@ public class HacpaiManager {
     public void resolveListPage() {
         String url = "http://" + hacpaiHost + "/recent";
         HttpHeaders requestHeaders = new HttpHeaders();
+        setHeaders(requestHeaders);
         HttpEntity<String> requestEntity = new HttpEntity<>(null, requestHeaders);
         ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, String.class);
         if (StringUtils.isEmpty(responseEntity.getBody())) {
@@ -117,6 +121,7 @@ public class HacpaiManager {
     private void updateArticle(HacpaiArticleDO articleDO) {
         String url = "http://" + hacpaiHost + "/article/" + articleDO.getArticleId();
         HttpHeaders requestHeaders = new HttpHeaders();
+        setHeaders(requestHeaders);
         HttpEntity<String> requestEntity = new HttpEntity<>(null, requestHeaders);
         ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, String.class);
         if (StringUtils.isEmpty(responseEntity.getBody())) {
@@ -126,6 +131,11 @@ public class HacpaiManager {
         String content = page.selectFirst(".article-content").html();
         articleDO.setArticleContent(content);
         articleDAO.update(articleDO);
+    }
+
+    private void setHeaders(HttpHeaders requestHeaders) {
+        requestHeaders.add("Cookie", hacpaiCookies);
+        requestHeaders.add("User-Agent", "PostmanRuntime/7.26.1");
     }
 
 }

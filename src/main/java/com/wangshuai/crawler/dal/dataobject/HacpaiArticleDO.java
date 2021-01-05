@@ -1,7 +1,7 @@
 package com.wangshuai.crawler.dal.dataobject;
 
-import com.wangshuai.crawler.dal.base.BaseDO;
 import lombok.Data;
+import xin.allonsy.common.BaseDO;
 
 import java.util.Date;
 

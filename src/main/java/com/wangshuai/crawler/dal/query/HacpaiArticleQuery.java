@@ -1,7 +1,7 @@
 package com.wangshuai.crawler.dal.query;
 
-import com.wangshuai.crawler.dal.base.PageQuery;
 import lombok.Data;
+import xin.allonsy.common.PageQuery;
 
 import java.util.Date;
 

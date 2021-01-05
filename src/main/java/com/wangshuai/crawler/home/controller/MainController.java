@@ -1,6 +1,5 @@
 package com.wangshuai.crawler.home.controller;
 
-import com.wangshuai.crawler.dal.base.PageQuery;
 import com.wangshuai.crawler.dal.dao.HacpaiArticleDAO;
 import com.wangshuai.crawler.dal.dataobject.HacpaiArticleDO;
 import com.wangshuai.crawler.dal.query.HacpaiArticleQuery;
@@ -11,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import xin.allonsy.common.PageQuery;
 
 import javax.annotation.Resource;
 

@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangshuai.crawler.dal.mapper.NewStockHkJisiluMapper">
+
+    <resultMap id="baseResult" type="com.wangshuai.crawler.dal.dataobject.NewStockHkJisiluDO">
+        <result property="id" column="id"/>
+        <result property="stockCode" column="stock_code"/>
+        <result property="stockName" column="stock_name"/>
+        <result property="market" column="market"/>
+        <result property="applyDate" column="apply_date"/>
+        <result property="applyDate2" column="apply_date2"/>
+        <result property="applyEndDate" column="apply_end_date"/>
+        <result property="applyEndDate2" column="apply_end_date2"/>
+        <result property="grayDate" column="gray_date"/>
+        <result property="listDate" column="list_date"/>
+        <result property="listDate2" column="list_date2"/>
+        <result property="priceMin" column="price_min"/>
+        <result property="priceMax" column="price_max"/>
+        <result property="issuePrice" column="issue_price"/>
+        <result property="issuePeMin" column="issue_pe_min"/>
+        <result property="issuePeMax" column="issue_pe_max"/>
+        <result property="jslAdvise" column="jsl_advise"/>
+        <result property="jslFirstIncrRate" column="jsl_first_incr_rate"/>
+        <result property="greenRate" column="green_rate"/>
+        <result property="greenAmount" column="green_amount"/>
+        <result property="refCompany" column="ref_company"/>
+        <result property="jslAboveRate" column="jsl_above_rate"/>
+        <result property="singleDrawMoney" column="single_draw_money"/>
+        <result property="luckyDrawRate" column="lucky_draw_rate"/>
+        <result property="raiseMoneyMin" column="raise_money_min"/>
+        <result property="raiseMoneyMax" column="raise_money_max"/>
+        <result property="grayIncrRate" column="gray_incr_rate"/>
+        <result property="grayIncrRate2" column="gray_incr_rate2"/>
+        <result property="firstIncrRt" column="first_incr_rt"/>
+        <result property="totalIncrRt" column="total_incr_rt"/>
+        <result property="underwriter" column="underwriter"/>
+        <result property="prospectus" column="prospectus"/>
+        <result property="iporesult" column="iporesult"/>
+        <result property="applyFlg" column="apply_flg"/>
+        <result property="listFlg" column="list_flg"/>
+        <result property="statusCd" column="status_cd"/>
+        <result property="yxRate" column="yx_rate"/>
+        <result property="hasAboveRt" column="has_above_rt"/>
+        <result property="notes" column="notes"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="column_List">
+        new_stock_hk_jisilu.id,
+        new_stock_hk_jisilu.stock_code,
+        new_stock_hk_jisilu.stock_name,
+        new_stock_hk_jisilu.market,
+        new_stock_hk_jisilu.apply_date,
+        new_stock_hk_jisilu.apply_date2,
+        new_stock_hk_jisilu.apply_end_date,
+        new_stock_hk_jisilu.apply_end_date2,
+        new_stock_hk_jisilu.gray_date,
+        new_stock_hk_jisilu.list_date,
+        new_stock_hk_jisilu.list_date2,
+        new_stock_hk_jisilu.price_min,
+        new_stock_hk_jisilu.price_max,
+        new_stock_hk_jisilu.issue_price,
+        new_stock_hk_jisilu.issue_pe_min,
+        new_stock_hk_jisilu.issue_pe_max,
+        new_stock_hk_jisilu.jsl_advise,
+        new_stock_hk_jisilu.jsl_first_incr_rate,
+        new_stock_hk_jisilu.green_rate,
+        new_stock_hk_jisilu.green_amount,
+        new_stock_hk_jisilu.ref_company,
+        new_stock_hk_jisilu.jsl_above_rate,
+        new_stock_hk_jisilu.single_draw_money,
+        new_stock_hk_jisilu.lucky_draw_rate,
+        new_stock_hk_jisilu.raise_money_min,
+        new_stock_hk_jisilu.raise_money_max,
+        new_stock_hk_jisilu.gray_incr_rate,
+        new_stock_hk_jisilu.gray_incr_rate2,
+        new_stock_hk_jisilu.first_incr_rt,
+        new_stock_hk_jisilu.total_incr_rt,
+        new_stock_hk_jisilu.underwriter,
+        new_stock_hk_jisilu.prospectus,
+        new_stock_hk_jisilu.iporesult,
+        new_stock_hk_jisilu.apply_flg,
+        new_stock_hk_jisilu.list_flg,
+        new_stock_hk_jisilu.status_cd,
+        new_stock_hk_jisilu.yx_rate,
+        new_stock_hk_jisilu.has_above_rt,
+        new_stock_hk_jisilu.notes,
+        new_stock_hk_jisilu.create_time,
+        new_stock_hk_jisilu.update_time
+    </sql>
+
+    <insert id="insert" parameterType="com.wangshuai.crawler.dal.dataobject.NewStockHkJisiluDO"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO new_stock_hk_jisilu (
+        <include refid="column_List"/>
+        ) VALUES (
+        null,
+        #{stockCode},
+        #{stockName},
+        #{market},
+        #{applyDate},
+        #{applyDate2},
+        #{applyEndDate},
+        #{applyEndDate2},
+        #{grayDate},
+        #{listDate},
+        #{listDate2},
+        #{priceMin},
+        #{priceMax},
+        #{issuePrice},
+        #{issuePeMin},
+        #{issuePeMax},
+        #{jslAdvise},
+        #{jslFirstIncrRate},
+        #{greenRate},
+        #{greenAmount},
+        #{refCompany},
+        #{jslAboveRate},
+        #{singleDrawMoney},
+        #{luckyDrawRate},
+        #{raiseMoneyMin},
+        #{raiseMoneyMax},
+        #{grayIncrRate},
+        #{grayIncrRate2},
+        #{firstIncrRt},
+        #{totalIncrRt},
+        #{underwriter},
+        #{prospectus},
+        #{iporesult},
+        #{applyFlg},
+        #{listFlg},
+        #{statusCd},
+        #{yxRate},
+        #{hasAboveRt},
+        #{notes},
+        now(),
+        now()
+        )
+    </insert>
+
+    <insert id="batchInsert" parameterType="list" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO new_stock_hk_jisilu (
+        <include refid="column_List"/>
+        ) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+            null,
+            #{item.stockCode},
+            #{item.stockName},
+            #{item.market},
+            #{item.applyDate},
+            #{item.applyDate2},
+            #{item.applyEndDate},
+            #{item.applyEndDate2},
+            #{item.grayDate},
+            #{item.listDate},
+            #{item.listDate2},
+            #{item.priceMin},
+            #{item.priceMax},
+            #{item.issuePrice},
+            #{item.issuePeMin},
+            #{item.issuePeMax},
+            #{item.jslAdvise},
+            #{item.jslFirstIncrRate},
+            #{item.greenRate},
+            #{item.greenAmount},
+            #{item.refCompany},
+            #{item.jslAboveRate},
+            #{item.singleDrawMoney},
+            #{item.luckyDrawRate},
+            #{item.raiseMoneyMin},
+            #{item.raiseMoneyMax},
+            #{item.grayIncrRate},
+            #{item.grayIncrRate2},
+            #{item.firstIncrRt},
+            #{item.totalIncrRt},
+            #{item.underwriter},
+            #{item.prospectus},
+            #{item.iporesult},
+            #{item.applyFlg},
+            #{item.listFlg},
+            #{item.statusCd},
+            #{item.yxRate},
+            #{item.hasAboveRt},
+            #{item.notes},
+            now(),
+            now()
+            )
+        </foreach>
+    </insert>
+
+    <update id="update" parameterType="com.wangshuai.crawler.dal.dataobject.NewStockHkJisiluDO">
+        UPDATE new_stock_hk_jisilu
+        <set>
+            <if test="stockCode != null and stockCode != '' ">
+                stock_code = #{stockCode},
+            </if>
+            <if test="stockName != null and stockName != '' ">
+                stock_name = #{stockName},
+            </if>
+            <if test="market != null and market != '' ">
+                market = #{market},
+            </if>
+            <if test="applyDate != null and applyDate != '' ">
+                apply_date = #{applyDate},
+            </if>
+            <if test="applyDate2 != null">
+                apply_date2 = #{applyDate2},
+            </if>
+            <if test="applyEndDate != null and applyEndDate != '' ">
+                apply_end_date = #{applyEndDate},
+            </if>
+            <if test="applyEndDate2 != null">
+                apply_end_date2 = #{applyEndDate2},
+            </if>
+            <if test="grayDate != null">
+                gray_date = #{grayDate},
+            </if>
+            <if test="listDate != null and listDate != '' ">
+                list_date = #{listDate},
+            </if>
+            <if test="listDate2 != null">
+                list_date2 = #{listDate2},
+            </if>
+            <if test="priceMin != null">
+                price_min = #{priceMin},
+            </if>
+            <if test="priceMax != null">
+                price_max = #{priceMax},
+            </if>
+            <if test="issuePrice != null">
+                issue_price = #{issuePrice},
+            </if>
+            <if test="issuePeMin != null">
+                issue_pe_min = #{issuePeMin},
+            </if>
+            <if test="issuePeMax != null">
+                issue_pe_max = #{issuePeMax},
+            </if>
+            <if test="jslAdvise != null and jslAdvise != '' ">
+                jsl_advise = #{jslAdvise},
+            </if>
+            <if test="jslFirstIncrRate != null and jslFirstIncrRate != '' ">
+                jsl_first_incr_rate = #{jslFirstIncrRate},
+            </if>
+            <if test="greenRate != null and greenRate != '' ">
+                green_rate = #{greenRate},
+            </if>
+            <if test="greenAmount != null">
+                green_amount = #{greenAmount},
+            </if>
+            <if test="refCompany != null and refCompany != '' ">
+                ref_company = #{refCompany},
+            </if>
+            <if test="jslAboveRate != null">
+                jsl_above_rate = #{jslAboveRate},
+            </if>
+            <if test="singleDrawMoney != null">
+                single_draw_money = #{singleDrawMoney},
+            </if>
+            <if test="luckyDrawRate != null">
+                lucky_draw_rate = #{luckyDrawRate},
+            </if>
+            <if test="raiseMoneyMin != null">
+                raise_money_min = #{raiseMoneyMin},
+            </if>
+            <if test="raiseMoneyMax != null">
+                raise_money_max = #{raiseMoneyMax},
+            </if>
+            <if test="grayIncrRate != null">
+                gray_incr_rate = #{grayIncrRate},
+            </if>
+            <if test="grayIncrRate2 != null">
+                gray_incr_rate2 = #{grayIncrRate2},
+            </if>
+            <if test="firstIncrRt != null">
+                first_incr_rt = #{firstIncrRt},
+            </if>
+            <if test="totalIncrRt != null">
+                total_incr_rt = #{totalIncrRt},
+            </if>
+            <if test="underwriter != null and underwriter != '' ">
+                underwriter = #{underwriter},
+            </if>
+            <if test="prospectus != null and prospectus != '' ">
+                prospectus = #{prospectus},
+            </if>
+            <if test="iporesult != null and iporesult != '' ">
+                iporesult = #{iporesult},
+            </if>
+            <if test="applyFlg != null">
+                apply_flg = #{applyFlg},
+            </if>
+            <if test="listFlg != null">
+                list_flg = #{listFlg},
+            </if>
+            <if test="statusCd != null and statusCd != '' ">
+                status_cd = #{statusCd},
+            </if>
+            <if test="yxRate != null">
+                yx_rate = #{yxRate},
+            </if>
+            <if test="hasAboveRt != null and hasAboveRt != '' ">
+                has_above_rt = #{hasAboveRt},
+            </if>
+            <if test="notes != null and notes != '' ">
+                notes = #{notes},
+            </if>
+            update_time = now()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <update id="batchUpdateById" parameterType="list">
+        <foreach collection="list" item="item" open="" close="" separator=";">
+            UPDATE new_stock_hk_jisilu
+            <set>
+                <if test="item.stockCode != null and item.stockCode != '' ">
+                    stock_code = #{item.stockCode},
+                </if>
+                <if test="item.stockName != null and item.stockName != '' ">
+                    stock_name = #{item.stockName},
+                </if>
+                <if test="item.market != null and item.market != '' ">
+                    market = #{item.market},
+                </if>
+                <if test="item.applyDate != null and item.applyDate != '' ">
+                    apply_date = #{item.applyDate},
+                </if>
+                <if test="item.applyDate2 != null">
+                    apply_date2 = #{item.applyDate2},
+                </if>
+                <if test="item.applyEndDate != null and item.applyEndDate != '' ">
+                    apply_end_date = #{item.applyEndDate},
+                </if>
+                <if test="item.applyEndDate2 != null">
+                    apply_end_date2 = #{item.applyEndDate2},
+                </if>
+                <if test="item.grayDate != null">
+                    gray_date = #{item.grayDate},
+                </if>
+                <if test="item.listDate != null and item.listDate != '' ">
+                    list_date = #{item.listDate},
+                </if>
+                <if test="item.listDate2 != null">
+                    list_date2 = #{item.listDate2},
+                </if>
+                <if test="item.priceMin != null">
+                    price_min = #{item.priceMin},
+                </if>
+                <if test="item.priceMax != null">
+                    price_max = #{item.priceMax},
+                </if>
+                <if test="item.issuePrice != null">
+                    issue_price = #{item.issuePrice},
+                </if>
+                <if test="item.issuePeMin != null">
+                    issue_pe_min = #{item.issuePeMin},
+                </if>
+                <if test="item.issuePeMax != null">
+                    issue_pe_max = #{item.issuePeMax},
+                </if>
+                <if test="item.jslAdvise != null and item.jslAdvise != '' ">
+                    jsl_advise = #{item.jslAdvise},
+                </if>
+                <if test="item.jslFirstIncrRate != null and item.jslFirstIncrRate != '' ">
+                    jsl_first_incr_rate = #{item.jslFirstIncrRate},
+                </if>
+                <if test="item.greenRate != null and item.greenRate != '' ">
+                    green_rate = #{item.greenRate},
+                </if>
+                <if test="item.greenAmount != null">
+                    green_amount = #{item.greenAmount},
+                </if>
+                <if test="item.refCompany != null and item.refCompany != '' ">
+                    ref_company = #{item.refCompany},
+                </if>
+                <if test="item.jslAboveRate != null">
+                    jsl_above_rate = #{item.jslAboveRate},
+                </if>
+                <if test="item.singleDrawMoney != null">
+                    single_draw_money = #{item.singleDrawMoney},
+                </if>
+                <if test="item.luckyDrawRate != null">
+                    lucky_draw_rate = #{item.luckyDrawRate},
+                </if>
+                <if test="item.raiseMoneyMin != null">
+                    raise_money_min = #{item.raiseMoneyMin},
+                </if>
+                <if test="item.raiseMoneyMax != null">
+                    raise_money_max = #{item.raiseMoneyMax},
+                </if>
+                <if test="item.grayIncrRate != null">
+                    gray_incr_rate = #{item.grayIncrRate},
+                </if>
+                <if test="item.grayIncrRate2 != null">
+                    gray_incr_rate2 = #{item.grayIncrRate2},
+                </if>
+                <if test="item.firstIncrRt != null">
+                    first_incr_rt = #{item.firstIncrRt},
+                </if>
+                <if test="item.totalIncrRt != null">
+                    total_incr_rt = #{item.totalIncrRt},
+                </if>
+                <if test="item.underwriter != null and item.underwriter != '' ">
+                    underwriter = #{item.underwriter},
+                </if>
+                <if test="item.prospectus != null and item.prospectus != '' ">
+                    prospectus = #{item.prospectus},
+                </if>
+                <if test="item.iporesult != null and item.iporesult != '' ">
+                    iporesult = #{item.iporesult},
+                </if>
+                <if test="item.applyFlg != null">
+                    apply_flg = #{item.applyFlg},
+                </if>
+                <if test="item.listFlg != null">
+                    list_flg = #{item.listFlg},
+                </if>
+                <if test="item.statusCd != null and item.statusCd != '' ">
+                    status_cd = #{item.statusCd},
+                </if>
+                <if test="item.yxRate != null">
+                    yx_rate = #{item.yxRate},
+                </if>
+                <if test="item.hasAboveRt != null and item.hasAboveRt != '' ">
+                    has_above_rt = #{item.hasAboveRt},
+                </if>
+                <if test="item.notes != null and item.notes != '' ">
+                    notes = #{item.notes},
+                </if>
+                update_time = now()
+            </set>
+            WHERE id = #{item.id}
+        </foreach>
+    </update>
+
+    <insert id="insertOrUpdate" parameterType="com.wangshuai.crawler.dal.dataobject.NewStockHkJisiluDO"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO new_stock_hk_jisilu (
+        <include refid="column_List"/>
+        ) VALUES (
+        null,
+        #{stockCode},
+        #{stockName},
+        #{market},
+        #{applyDate},
+        #{applyDate2},
+        #{applyEndDate},
+        #{applyEndDate2},
+        #{grayDate},
+        #{listDate},
+        #{listDate2},
+        #{priceMin},
+        #{priceMax},
+        #{issuePrice},
+        #{issuePeMin},
+        #{issuePeMax},
+        #{jslAdvise},
+        #{jslFirstIncrRate},
+        #{greenRate},
+        #{greenAmount},
+        #{refCompany},
+        #{jslAboveRate},
+        #{singleDrawMoney},
+        #{luckyDrawRate},
+        #{raiseMoneyMin},
+        #{raiseMoneyMax},
+        #{grayIncrRate},
+        #{grayIncrRate2},
+        #{firstIncrRt},
+        #{totalIncrRt},
+        #{underwriter},
+        #{prospectus},
+        #{iporesult},
+        #{applyFlg},
+        #{listFlg},
+        #{statusCd},
+        #{yxRate},
+        #{hasAboveRt},
+        #{notes},
+        now(),
+        now()
+        ) ON DUPLICATE KEY UPDATE
+        <if test="stockCode != null and stockCode != '' ">
+                stock_code = #{stockCode},
+            </if>
+            <if test="stockName != null and stockName != '' ">
+                stock_name = #{stockName},
+            </if>
+            <if test="market != null and market != '' ">
+                market = #{market},
+            </if>
+            <if test="applyDate != null and applyDate != '' ">
+                apply_date = #{applyDate},
+            </if>
+            <if test="applyDate2 != null">
+                apply_date2 = #{applyDate2},
+            </if>
+            <if test="applyEndDate != null and applyEndDate != '' ">
+                apply_end_date = #{applyEndDate},
+            </if>
+            <if test="applyEndDate2 != null">
+                apply_end_date2 = #{applyEndDate2},
+            </if>
+            <if test="grayDate != null">
+                gray_date = #{grayDate},
+            </if>
+            <if test="listDate != null and listDate != '' ">
+                list_date = #{listDate},
+            </if>
+            <if test="listDate2 != null">
+                list_date2 = #{listDate2},
+            </if>
+            <if test="priceMin != null">
+                price_min = #{priceMin},
+            </if>
+            <if test="priceMax != null">
+                price_max = #{priceMax},
+            </if>
+            <if test="issuePrice != null">
+                issue_price = #{issuePrice},
+            </if>
+            <if test="issuePeMin != null">
+                issue_pe_min = #{issuePeMin},
+            </if>
+            <if test="issuePeMax != null">
+                issue_pe_max = #{issuePeMax},
+            </if>
+            <if test="jslAdvise != null and jslAdvise != '' ">
+                jsl_advise = #{jslAdvise},
+            </if>
+            <if test="jslFirstIncrRate != null and jslFirstIncrRate != '' ">
+                jsl_first_incr_rate = #{jslFirstIncrRate},
+            </if>
+            <if test="greenRate != null and greenRate != '' ">
+                green_rate = #{greenRate},
+            </if>
+            <if test="greenAmount != null">
+                green_amount = #{greenAmount},
+            </if>
+            <if test="refCompany != null and refCompany != '' ">
+                ref_company = #{refCompany},
+            </if>
+            <if test="jslAboveRate != null">
+                jsl_above_rate = #{jslAboveRate},
+            </if>
+            <if test="singleDrawMoney != null">
+                single_draw_money = #{singleDrawMoney},
+            </if>
+            <if test="luckyDrawRate != null">
+                lucky_draw_rate = #{luckyDrawRate},
+            </if>
+            <if test="raiseMoneyMin != null">
+                raise_money_min = #{raiseMoneyMin},
+            </if>
+            <if test="raiseMoneyMax != null">
+                raise_money_max = #{raiseMoneyMax},
+            </if>
+            <if test="grayIncrRate != null">
+                gray_incr_rate = #{grayIncrRate},
+            </if>
+            <if test="grayIncrRate2 != null">
+                gray_incr_rate2 = #{grayIncrRate2},
+            </if>
+            <if test="firstIncrRt != null">
+                first_incr_rt = #{firstIncrRt},
+            </if>
+            <if test="totalIncrRt != null">
+                total_incr_rt = #{totalIncrRt},
+            </if>
+            <if test="underwriter != null and underwriter != '' ">
+                underwriter = #{underwriter},
+            </if>
+            <if test="prospectus != null and prospectus != '' ">
+                prospectus = #{prospectus},
+            </if>
+            <if test="iporesult != null and iporesult != '' ">
+                iporesult = #{iporesult},
+            </if>
+            <if test="applyFlg != null">
+                apply_flg = #{applyFlg},
+            </if>
+            <if test="listFlg != null">
+                list_flg = #{listFlg},
+            </if>
+            <if test="statusCd != null and statusCd != '' ">
+                status_cd = #{statusCd},
+            </if>
+            <if test="yxRate != null">
+                yx_rate = #{yxRate},
+            </if>
+            <if test="hasAboveRt != null and hasAboveRt != '' ">
+                has_above_rt = #{hasAboveRt},
+            </if>
+            <if test="notes != null and notes != '' ">
+                notes = #{notes},
+            </if>
+        update_time = now()
+    </insert>
+
+    <update id="deleteById" parameterType="java.lang.Long">
+        DELETE FROM new_stock_hk_jisilu
+        WHERE id = #{id}
+    </update>
+
+    <update id="deleteByIds" parameterType="java.util.List">
+        DELETE FROM new_stock_hk_jisilu
+        WHERE id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="findById" resultMap="baseResult" parameterType="java.lang.Long">
+        SELECT
+        <include refid="column_List"/>
+        FROM new_stock_hk_jisilu
+        WHERE id = #{id}
+    </select>
+
+    <sql id="query_condition">
+        <where>
+            <if test="id != null">
+                AND new_stock_hk_jisilu.id = #{id}
+            </if>
+            <if test="stockCode != null and stockCode != '' ">
+                AND new_stock_hk_jisilu.stock_code = #{stockCode}
+            </if>
+            <if test="stockName != null and stockName != '' ">
+                AND new_stock_hk_jisilu.stock_name = #{stockName}
+            </if>
+            <if test="market != null and market != '' ">
+                AND new_stock_hk_jisilu.market = #{market}
+            </if>
+            <if test="applyDate != null and applyDate != '' ">
+                AND new_stock_hk_jisilu.apply_date = #{applyDate}
+            </if>
+            <if test="applyDate2 != null">
+                AND new_stock_hk_jisilu.apply_date2 = #{applyDate2}
+            </if>
+            <if test="applyEndDate != null and applyEndDate != '' ">
+                AND new_stock_hk_jisilu.apply_end_date = #{applyEndDate}
+            </if>
+            <if test="applyEndDate2 != null">
+                AND new_stock_hk_jisilu.apply_end_date2 = #{applyEndDate2}
+            </if>
+            <if test="grayDate != null">
+                AND new_stock_hk_jisilu.gray_date = #{grayDate}
+            </if>
+            <if test="listDate != null and listDate != '' ">
+                AND new_stock_hk_jisilu.list_date = #{listDate}
+            </if>
+            <if test="listDate2 != null">
+                AND new_stock_hk_jisilu.list_date2 = #{listDate2}
+            </if>
+            <if test="priceMin != null">
+                AND new_stock_hk_jisilu.price_min = #{priceMin}
+            </if>
+            <if test="priceMax != null">
+                AND new_stock_hk_jisilu.price_max = #{priceMax}
+            </if>
+            <if test="issuePrice != null">
+                AND new_stock_hk_jisilu.issue_price = #{issuePrice}
+            </if>
+            <if test="issuePeMin != null">
+                AND new_stock_hk_jisilu.issue_pe_min = #{issuePeMin}
+            </if>
+            <if test="issuePeMax != null">
+                AND new_stock_hk_jisilu.issue_pe_max = #{issuePeMax}
+            </if>
+            <if test="jslAdvise != null and jslAdvise != '' ">
+                AND new_stock_hk_jisilu.jsl_advise = #{jslAdvise}
+            </if>
+            <if test="jslFirstIncrRate != null and jslFirstIncrRate != '' ">
+                AND new_stock_hk_jisilu.jsl_first_incr_rate = #{jslFirstIncrRate}
+            </if>
+            <if test="greenRate != null and greenRate != '' ">
+                AND new_stock_hk_jisilu.green_rate = #{greenRate}
+            </if>
+            <if test="greenAmount != null">
+                AND new_stock_hk_jisilu.green_amount = #{greenAmount}
+            </if>
+            <if test="refCompany != null and refCompany != '' ">
+                AND new_stock_hk_jisilu.ref_company = #{refCompany}
+            </if>
+            <if test="jslAboveRate != null">
+                AND new_stock_hk_jisilu.jsl_above_rate = #{jslAboveRate}
+            </if>
+            <if test="singleDrawMoney != null">
+                AND new_stock_hk_jisilu.single_draw_money = #{singleDrawMoney}
+            </if>
+            <if test="luckyDrawRate != null">
+                AND new_stock_hk_jisilu.lucky_draw_rate = #{luckyDrawRate}
+            </if>
+            <if test="raiseMoneyMin != null">
+                AND new_stock_hk_jisilu.raise_money_min = #{raiseMoneyMin}
+            </if>
+            <if test="raiseMoneyMax != null">
+                AND new_stock_hk_jisilu.raise_money_max = #{raiseMoneyMax}
+            </if>
+            <if test="grayIncrRate != null">
+                AND new_stock_hk_jisilu.gray_incr_rate = #{grayIncrRate}
+            </if>
+            <if test="grayIncrRate2 != null">
+                AND new_stock_hk_jisilu.gray_incr_rate2 = #{grayIncrRate2}
+            </if>
+            <if test="firstIncrRt != null">
+                AND new_stock_hk_jisilu.first_incr_rt = #{firstIncrRt}
+            </if>
+            <if test="totalIncrRt != null">
+                AND new_stock_hk_jisilu.total_incr_rt = #{totalIncrRt}
+            </if>
+            <if test="underwriter != null and underwriter != '' ">
+                AND new_stock_hk_jisilu.underwriter = #{underwriter}
+            </if>
+            <if test="prospectus != null and prospectus != '' ">
+                AND new_stock_hk_jisilu.prospectus = #{prospectus}
+            </if>
+            <if test="iporesult != null and iporesult != '' ">
+                AND new_stock_hk_jisilu.iporesult = #{iporesult}
+            </if>
+            <if test="applyFlg != null">
+                AND new_stock_hk_jisilu.apply_flg = #{applyFlg}
+            </if>
+            <if test="listFlg != null">
+                AND new_stock_hk_jisilu.list_flg = #{listFlg}
+            </if>
+            <if test="statusCd != null and statusCd != '' ">
+                AND new_stock_hk_jisilu.status_cd = #{statusCd}
+            </if>
+            <if test="yxRate != null">
+                AND new_stock_hk_jisilu.yx_rate = #{yxRate}
+            </if>
+            <if test="hasAboveRt != null and hasAboveRt != '' ">
+                AND new_stock_hk_jisilu.has_above_rt = #{hasAboveRt}
+            </if>
+            <if test="notes != null and notes != '' ">
+                AND new_stock_hk_jisilu.notes = #{notes}
+            </if>
+            <if test="createTime != null ">
+                AND new_stock_hk_jisilu.create_time = #{createTime}
+            </if>
+            <if test="updateTime != null ">
+                AND new_stock_hk_jisilu.update_time = #{updateTime}
+            </if>
+        </where>
+    </sql>
+
+    <select id="countByQuery" parameterType="com.wangshuai.crawler.dal.query.NewStockHkJisiluQuery"
+            resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM new_stock_hk_jisilu
+        <include refid="query_condition"/>
+    </select>
+
+    <select id="pageQuery" resultMap="baseResult"
+            parameterType="com.wangshuai.crawler.dal.query.NewStockHkJisiluQuery">
+        SELECT
+        <include refid="column_List"/>
+        FROM new_stock_hk_jisilu
+        <include refid="query_condition"/>
+        <choose>
+            <when test="null != sortField and null != sortOrder">
+                ORDER BY ${sortField} ${sortOrder}
+            </when>
+            <otherwise>
+                ORDER BY id DESC
+            </otherwise>
+        </choose>
+        LIMIT #{startPos},#{pageSize}
+    </select>
+
+    <select id="fullQuery" resultMap="baseResult"
+            parameterType="com.wangshuai.crawler.dal.query.NewStockHkJisiluQuery">
+        SELECT
+        <include refid="column_List"/>
+        FROM new_stock_hk_jisilu
+        <include refid="query_condition"/>
+        <choose>
+            <when test="null != sortField and null != sortOrder">
+                ORDER BY ${sortField} ${sortOrder}
+            </when>
+            <otherwise>
+                ORDER BY id DESC
+            </otherwise>
+        </choose>
+    </select>
+
+</mapper>
+

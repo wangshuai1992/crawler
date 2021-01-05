@@ -3,10 +3,10 @@ package com.wangshuai.crawler.excel;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.wangshuai.crawler.common.utils.EasyExcelUtil;
-import com.wangshuai.crawler.common.utils.FileUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
+import xin.allonsy.utils.EasyExcelUtil;
+import xin.allonsy.utils.FileUtil;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
-@ComponentScan(basePackages = {"com.wangshuai"})
+@ComponentScan(basePackages = {"com.wangshuai", "xin.allonsy"})
 @MapperScan("com.wangshuai.crawler.dal.mapper")
 public class CrawlerApplication {
 

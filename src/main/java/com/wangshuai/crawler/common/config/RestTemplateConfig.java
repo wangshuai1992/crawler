@@ -1,7 +1,6 @@
 package com.wangshuai.crawler.common.config;
 
 import com.alibaba.fastjson.JSONObject;
-import com.wangshuai.crawler.common.utils.CommonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
@@ -20,6 +19,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.http.client.*;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.client.RestTemplate;
+import xin.allonsy.utils.CommonUtil;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -46,9 +46,6 @@ public class RestTemplateConfig {
 
     @Value("${crawler.http.log.lengthlimit}")
     private int logLengthLimit;
-
-    @Value("${hacpai.cookies}")
-    private String hacpaiCookies;
 
     @Bean
     public HttpClient httpClient() {
@@ -86,11 +83,15 @@ public class RestTemplateConfig {
                 throws IOException {
             HttpHeaders headers = request.getHeaders();
             headers.add("Cache-Control", "no-cache");
-            headers.add("Cookie", hacpaiCookies);
-//            headers.add("Content-Type", "application/json");
+            if (!headers.containsKey("Content-Type")) {
+                headers.add("Content-Type", "application/json; charset=UTF-8");
+            }
+
             headers.add("Host", request.getURI().getHost());
-//            headers.add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0");
-            headers.add("User-Agent", "PostmanRuntime/7.26.1");
+            if (!headers.containsKey("User-Agent")) {
+//                headers.add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0");
+                headers.add("User-Agent", "PostmanRuntime/7.26.1");
+            }
             return this.executeWithLog(request, body, execution);
         }
 

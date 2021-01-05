@@ -1,7 +1,7 @@
 package com.wangshuai.crawler;
 
-import com.wangshuai.crawler.common.config.ApolloConfig;
 import com.wangshuai.crawler.manager.hacpai.HacpaiManager;
+import com.wangshuai.crawler.manager.stock.hk.jisilu.JisiluManager;
 import com.wangshuai.crawler.oss.OssFileUploader;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,17 +26,17 @@ public class TestController {
     private HacpaiManager hacpaiManager;
 
     @Resource
-    private ApolloConfig apolloConfig;
+    private JisiluManager jisiluManager;
 
     @RequestMapping("/HJU432MTG/test")
     public Object test() {
-//        return ossFileUploader.uploadFileFromWebUrl("http://tech.yuceyi.com/upload/c6e4c324f51946b88003df8e8110f9c2_image.png");
-        return ApolloConfig.getTestValue();
+        jisiluManager.login();
+        return "success";
     }
 
     @RequestMapping("/HJU432MTG/test1")
     public Object test1() {
-        hacpaiManager.resolveListPage();
+        jisiluManager.updateData();
         return "success";
     }
 

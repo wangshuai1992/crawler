@@ -119,55 +119,55 @@ public class JisiluManager {
             if (StringUtils.isEmpty(sArr[0])) {
                 sArr[0] = sArr[sArr.length - 1];
             }
-            jisiluDO.setPriceMin(BigDecimal.valueOf(Double.parseDouble(sArr[0])));
-            jisiluDO.setPriceMax(BigDecimal.valueOf(Double.parseDouble(sArr[sArr.length - 1])));
+            jisiluDO.setPriceMin(new BigDecimal(sArr[0]));
+            jisiluDO.setPriceMax(new BigDecimal(sArr[sArr.length - 1]));
         }
         if (StringUtils.isNotEmpty(cell.getString("issue_price"))) {
-            jisiluDO.setIssuePrice(BigDecimal.valueOf(Double.parseDouble(cell.getString("issue_price"))));
+            jisiluDO.setIssuePrice(new BigDecimal(cell.getString("issue_price")));
         }
         if (StringUtils.isNotEmpty(cell.getString("issue_pe_range"))) {
             String[] sArr = cell.getString("issue_pe_range").split("-");
             if (StringUtils.isEmpty(sArr[0])) {
                 sArr[0] = sArr[sArr.length - 1];
             }
-            jisiluDO.setIssuePeMin(BigDecimal.valueOf(Double.parseDouble(sArr[0])));
-            jisiluDO.setIssuePeMax(BigDecimal.valueOf(Double.parseDouble(sArr[sArr.length - 1])));
+            jisiluDO.setIssuePeMin(new BigDecimal(sArr[0]));
+            jisiluDO.setIssuePeMax(new BigDecimal(sArr[sArr.length - 1]));
         }
         jisiluDO.setJslAdvise(cell.getString("jsl_advise"));
         jisiluDO.setJslFirstIncrRate(cell.getString("jsl_first_incr_rt"));
         jisiluDO.setGreenRate(cell.getString("green_rate"));
         if (StringUtils.isNotEmpty(cell.getString("green_amount"))) {
-            jisiluDO.setGreenAmount(BigDecimal.valueOf(Double.parseDouble(cell.getString("green_amount"))));
+            jisiluDO.setGreenAmount(new BigDecimal(cell.getString("green_amount")));
         }
         jisiluDO.setRefCompany(cell.getString("ref_company"));
         if (StringUtils.isNotEmpty(cell.getString("jsl_above_rate"))) {
-            jisiluDO.setJslAboveRate(BigDecimal.valueOf(Double.parseDouble(cell.getString("jsl_above_rate"))));
+            jisiluDO.setJslAboveRate(new BigDecimal(cell.getString("jsl_above_rate")));
         }
         if (StringUtils.isNotEmpty(cell.getString("single_draw_money"))) {
-            jisiluDO.setSingleDrawMoney(BigDecimal.valueOf(Double.parseDouble(cell.getString("single_draw_money"))));
+            jisiluDO.setSingleDrawMoney(new BigDecimal(cell.getString("single_draw_money")));
         }
         if (StringUtils.isNotEmpty(cell.getString("lucky_draw_rt"))) {
-            jisiluDO.setLuckyDrawRate(BigDecimal.valueOf(Double.parseDouble(cell.getString("lucky_draw_rt"))));
+            jisiluDO.setLuckyDrawRate(new BigDecimal(cell.getString("lucky_draw_rt")));
         }
         if (StringUtils.isNotEmpty(cell.getString("raise_money"))) {
             String[] sArr = cell.getString("raise_money").split("-");
             if (StringUtils.isEmpty(sArr[0])) {
                 sArr[0] = sArr[sArr.length - 1];
             }
-            jisiluDO.setRaiseMoneyMin(BigDecimal.valueOf(Double.parseDouble(sArr[0])));
-            jisiluDO.setRaiseMoneyMax(BigDecimal.valueOf(Double.parseDouble(sArr[sArr.length - 1])));
+            jisiluDO.setRaiseMoneyMin(new BigDecimal(sArr[0]));
+            jisiluDO.setRaiseMoneyMax(new BigDecimal(sArr[sArr.length - 1]));
         }
         if (StringUtils.isNotEmpty(cell.getString("gray_incr_rt"))) {
-            jisiluDO.setGrayIncrRate(BigDecimal.valueOf(Double.parseDouble(cell.getString("gray_incr_rt"))));
+            jisiluDO.setGrayIncrRate(new BigDecimal(cell.getString("gray_incr_rt")));
         }
         if (StringUtils.isNotEmpty(cell.getString("gray_incr_rt2"))) {
-            jisiluDO.setGrayIncrRate2(BigDecimal.valueOf(Double.parseDouble(cell.getString("gray_incr_rt2"))));
+            jisiluDO.setGrayIncrRate2(new BigDecimal(cell.getString("gray_incr_rt2")));
         }
         if (StringUtils.isNotEmpty(cell.getString("first_incr_rt"))) {
-            jisiluDO.setFirstIncrRt(BigDecimal.valueOf(Double.parseDouble(cell.getString("first_incr_rt"))));
+            jisiluDO.setFirstIncrRt(new BigDecimal(cell.getString("first_incr_rt")));
         }
         if (StringUtils.isNotEmpty(cell.getString("total_incr_rt"))) {
-            jisiluDO.setTotalIncrRt(BigDecimal.valueOf(Double.parseDouble(cell.getString("total_incr_rt"))));
+            jisiluDO.setTotalIncrRt(new BigDecimal(cell.getString("total_incr_rt")));
         }
         jisiluDO.setUnderwriter(cell.getString("underwriter"));
         jisiluDO.setProspectus(cell.getString("prospectus"));
@@ -176,7 +176,7 @@ public class JisiluManager {
         jisiluDO.setListFlg(cell.getInteger("list_flg"));
         jisiluDO.setStatusCd(cell.getString("status_cd"));
         if (StringUtils.isNotEmpty(cell.getString("yx_rate"))) {
-            jisiluDO.setYxRate(BigDecimal.valueOf(Double.parseDouble(cell.getString("yx_rate"))));
+            jisiluDO.setYxRate(new BigDecimal(cell.getString("yx_rate")));
         }
         jisiluDO.setHasAboveRt(cell.getString("has_above_rt"));
         jisiluDO.setNotes(cell.getString("notes"));

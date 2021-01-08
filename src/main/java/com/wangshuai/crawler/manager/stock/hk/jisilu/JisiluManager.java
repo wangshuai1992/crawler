@@ -140,8 +140,8 @@ public class JisiluManager {
             jisiluDO.setGreenAmount(new BigDecimal(cell.getString("green_amount")));
         }
         jisiluDO.setRefCompany(cell.getString("ref_company"));
-        if (StringUtils.isNotEmpty(cell.getString("jsl_above_rate"))) {
-            jisiluDO.setJslAboveRate(new BigDecimal(cell.getString("jsl_above_rate")));
+        if (StringUtils.isNotEmpty(cell.getString("jsl_above_rt"))) {
+            jisiluDO.setJslAboveRate(new BigDecimal(cell.getString("jsl_above_rt")));
         }
         if (StringUtils.isNotEmpty(cell.getString("single_draw_money"))) {
             jisiluDO.setSingleDrawMoney(new BigDecimal(cell.getString("single_draw_money")));

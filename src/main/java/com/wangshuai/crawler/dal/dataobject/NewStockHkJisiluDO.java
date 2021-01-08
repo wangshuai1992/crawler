@@ -118,7 +118,7 @@ public class NewStockHkJisiluDO extends BaseDO {
     private String refCompany;
 
     /**
-     * 集思录预测超购倍数 jsl_above_rate
+     * 集思录预测超购倍数/hasAboveRt为true的时候是真正的超购倍数 jsl_above_rate
      */
     private BigDecimal jslAboveRate;
 

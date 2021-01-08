@@ -1,4 +1,4 @@
-package com.wangshuai.crawler.home.controller;
+package com.wangshuai.crawler.controller;
 
 import com.wangshuai.crawler.dal.dao.HacpaiArticleDAO;
 import com.wangshuai.crawler.dal.dataobject.HacpaiArticleDO;

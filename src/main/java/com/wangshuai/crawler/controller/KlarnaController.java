@@ -1,4 +1,4 @@
-package com.wangshuai.crawler.home.controller;
+package com.wangshuai.crawler.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.wangshuai.crawler.manager.klarna.KlarnaManager;

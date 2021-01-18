@@ -39,7 +39,13 @@ public class UpdateJisiluHkNewStockJobHandler extends IJobHandler {
     public ReturnT<String> execute(String arg) throws Exception {
         XxlJobLogger.log("============== UpdateJisiluHkNewStockJobHandler.execute begin ==============");
         log.info("============== UpdateJisiluHkNewStockJobHandler.execute begin ==============");
-        jisiluManager.updateData();
+        try {
+            jisiluManager.updateData();
+        } catch (Exception e) {
+            XxlJobLogger.log("============== UpdateJisiluHkNewStockJobHandler.execute error ==============");
+            log.error("============== UpdateJisiluHkNewStockJobHandler.execute error ==============", e);
+            throw e;
+        }
         XxlJobLogger.log("============== UpdateJisiluHkNewStockJobHandler.execute end ==============");
         log.info("============== UpdateJisiluHkNewStockJobHandler.execute end ==============");
         return ReturnT.SUCCESS;

@@ -4,9 +4,11 @@ import com.wangshuai.crawler.dal.dao.HacpaiArticleDAO;
 import com.wangshuai.crawler.dal.dataobject.HacpaiArticleDO;
 import com.wangshuai.crawler.dal.query.HacpaiArticleQuery;
 import com.wangshuai.crawler.manager.novel.NovelDownloader;
+import jodd.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,16 +33,30 @@ public class MainController {
     @Resource
     private HacpaiArticleDAO hacpaiArticleDAO;
 
-    @RequestMapping("/")
-    public String index(ModelMap modelMap) {
-        return "main";
-    }
+//    @RequestMapping("/")
+//    public String index(ModelMap modelMap) {
+//        return "main";
+//    }
 
-    @RequestMapping("/downloadNovel")
+    @RequestMapping("/{refundId}")
     @ResponseBody
-    public String downloadNovel(ModelMap modelMap) throws Exception {
-        novelDownloader.downloadNovel();
-        return "done";
+    public String getTableSuffix(@PathVariable("refundId") String refundId) {
+        if (StringUtil.isNotEmpty(refundId)) {
+            int x = Math.abs(refundId.hashCode() % 128);
+            String result = "";
+            if (x < 10) {
+                result = "00" + x;
+            } else {
+                if (x < 100) {
+                    result = "0" + x;
+                }
+                if (x > 99) {
+                    result = x + "";
+                }
+            }
+            return result;
+        }
+        return null;
     }
 
     @RequestMapping("/blogList")
@@ -71,4 +87,12 @@ public class MainController {
         query.setArticleId(articleId);
         return hacpaiArticleDAO.fullQuery(query).get(0);
     }
+
+    @RequestMapping("/downloadNovel")
+    @ResponseBody
+    public String downloadNovel(ModelMap modelMap) throws Exception {
+        novelDownloader.downloadNovel();
+        return "done";
+    }
+
 }

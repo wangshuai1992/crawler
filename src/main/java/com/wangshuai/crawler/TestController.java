@@ -2,7 +2,7 @@ package com.wangshuai.crawler;
 
 import com.wangshuai.crawler.manager.hacpai.HacpaiManager;
 import com.wangshuai.crawler.manager.stock.hk.jisilu.JisiluManager;
-import com.wangshuai.crawler.oss.OssFileUploader;
+import com.wangshuai.crawler.oss.OssFileUploadManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 public class TestController {
 
     @Resource
-    private OssFileUploader ossFileUploader;
+    private OssFileUploadManager ossFileUploadManager;
 
     @Resource
     private HacpaiManager hacpaiManager;

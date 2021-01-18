@@ -1,11 +1,13 @@
 package com.wangshuai.crawler.oss;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.qiniu.http.Response;
 import com.qiniu.storage.Configuration;
 import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
+import com.qiniu.util.StringMap;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -29,7 +31,7 @@ import java.util.UUID;
  */
 @Component
 @Slf4j
-public class OssFileUploader {
+public class OssFileUploadManager {
 
     @Value("${oss.qiniu.httpbase}")
     private String httpBaseUrl;
@@ -42,6 +44,9 @@ public class OssFileUploader {
 
     @Value("${oss.qiniu.bucket}")
     private String bucket;
+
+//    @Value("${oss.qiniu.callbackurl}")
+//    private String callbackUrl;
 
     @Resource
     private RestTemplate restTemplate;
@@ -145,6 +150,23 @@ public class OssFileUploader {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public JSONObject createUploadToken() {
+        Auth auth = Auth.create(accesskey, secretkey);
+        StringMap putPolicy = new StringMap();
+//        putPolicy.put("callbackUrl", callbackUrl);
+        // 预定义变量 https://developer.qiniu.com/kodo/1235/vars#magicvar
+//        putPolicy.put("callbackBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":$(fsize)}");
+        // 可以有自定义的额外参数  https://developer.qiniu.com/kodo/1235/vars#xvar
+//        putPolicy.put("callbackBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":$(fsize),\"user\":\"$(x:user)\",\"age\",$(x:age)}");
+//        putPolicy.put("callbackBodyType", "application/json");
+        long expireSeconds = 3600;
+
+        JSONObject result = new JSONObject();
+        result.put("token", auth.uploadToken(bucket, null, expireSeconds, putPolicy, false));
+        result.put("domain", httpBaseUrl);
+        return result;
     }
 
     /**

@@ -12,18 +12,21 @@ import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.*;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.client.RestTemplate;
 import xin.allonsy.utils.CommonUtil;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * RestTemplateConfig
@@ -71,13 +74,18 @@ public class RestTemplateConfig {
 
     @Bean
     public RestTemplate restTemplate(ClientHttpRequestFactory clientHttpRequestFactory) {
-        RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
+        // 解决请求乱码
+        StringHttpMessageConverter m = new StringHttpMessageConverter(StandardCharsets.UTF_8);
+        RestTemplate restTemplate = new RestTemplateBuilder().additionalMessageConverters(m).build();
+        restTemplate.setRequestFactory(clientHttpRequestFactory);
         // restTemplate.setErrorHandler(new CustomResponseErrorHandler());
-        restTemplate.setInterceptors(Collections.singletonList(new ShopifyRequestInterceptor()));
+        List<ClientHttpRequestInterceptor> interceptors = new ArrayList<>();
+        interceptors.add(new CustomRequestInterceptor());
+        restTemplate.setInterceptors(interceptors);
         return restTemplate;
     }
 
-    private class ShopifyRequestInterceptor implements ClientHttpRequestInterceptor {
+    private class CustomRequestInterceptor implements ClientHttpRequestInterceptor {
         @Override
         public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
                 throws IOException {

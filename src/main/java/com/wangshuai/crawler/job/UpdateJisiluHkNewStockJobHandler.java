@@ -1,10 +1,9 @@
 package com.wangshuai.crawler.job;
 
 import com.wangshuai.crawler.manager.stock.hk.jisilu.JisiluManager;
-import com.xxl.job.core.biz.model.ReturnT;
+import com.xxl.job.core.context.XxlJobHelper;
 import com.xxl.job.core.handler.IJobHandler;
 import com.xxl.job.core.handler.annotation.XxlJob;
-import com.xxl.job.core.log.XxlJobLogger;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -30,25 +29,24 @@ public class UpdateJisiluHkNewStockJobHandler extends IJobHandler {
     /**
      * 更新数据
      *
-     * @param arg
      * @return
      * @throws Exception
      */
     @XxlJob(value = "updateJisiluHkNewStockJob", init = "init", destroy = "destroy")
     @Override
-    public ReturnT<String> execute(String arg) throws Exception {
-        XxlJobLogger.log("============== UpdateJisiluHkNewStockJobHandler.execute begin ==============");
+    public void execute() throws Exception {
+        XxlJobHelper.log("============== UpdateJisiluHkNewStockJobHandler.execute begin ==============");
         log.info("============== UpdateJisiluHkNewStockJobHandler.execute begin ==============");
         try {
             jisiluManager.updateData();
         } catch (Exception e) {
-            XxlJobLogger.log("============== UpdateJisiluHkNewStockJobHandler.execute error ==============");
+            XxlJobHelper.log("============== UpdateJisiluHkNewStockJobHandler.execute error ==============");
             log.error("============== UpdateJisiluHkNewStockJobHandler.execute error ==============", e);
             throw e;
         }
-        XxlJobLogger.log("============== UpdateJisiluHkNewStockJobHandler.execute end ==============");
+        XxlJobHelper.log("============== UpdateJisiluHkNewStockJobHandler.execute end ==============");
         log.info("============== UpdateJisiluHkNewStockJobHandler.execute end ==============");
-        return ReturnT.SUCCESS;
+        XxlJobHelper.handleSuccess();
     }
 
     @Override

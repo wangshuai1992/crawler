@@ -160,8 +160,24 @@ public class ExcelReader {
         return JSON.toJSONString(boList);
     }
 
+    public static String getAddShopifyTagsData() {
+        JSONArray data = new JSONArray();
+        List<Map<Integer, String>> readResult = (ExcelReader.readerExcelAsJson(resourcePath + "/addTagsData.xlsx", "Sheet1"));
+        // 去掉表头
+        readResult.remove(0);
+        for (Map<Integer, String> row : readResult) {
+            JSONObject jsonObject = new JSONObject(true);
+            jsonObject.put("spuId", row.get(0).trim());
+            jsonObject.put("shopId", row.get(1).trim());
+            jsonObject.put("tags", row.get(2).trim());
+            data.add(jsonObject);
+        }
+        return data.toJSONString();
+    }
+
     public static void main(String[] args) {
-        System.out.println(getFinalConsultTypeJson());
+        System.out.println(getAddShopifyTagsData());
+//        System.out.println(getFinalConsultTypeJson());
 //        System.out.println(getConsultQuestionJson());
 //        System.out.println(getReplyScriptJson());
     }

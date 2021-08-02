@@ -6,6 +6,7 @@ import com.wangshuai.crawler.dal.query.HacpaiArticleQuery;
 import com.wangshuai.crawler.manager.novel.NovelDownloader;
 import jodd.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import xin.allonsy.common.PageQuery;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * MainController
@@ -85,7 +87,11 @@ public class MainController {
     public HacpaiArticleDO getArticleById(@RequestParam(value = "articleId", defaultValue = "1") Long articleId) {
         HacpaiArticleQuery<HacpaiArticleDO> query = new HacpaiArticleQuery<>();
         query.setArticleId(articleId);
-        return hacpaiArticleDAO.fullQuery(query).get(0);
+        List<HacpaiArticleDO> queryResult = hacpaiArticleDAO.fullQuery(query);
+        if (CollectionUtils.isEmpty(queryResult)) {
+            return null;
+        }
+        return queryResult.get(0);
     }
 
     @RequestMapping("/downloadNovel")

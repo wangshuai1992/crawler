@@ -126,6 +126,11 @@
             <artifactId>xxl-job-core</artifactId>
             <version>2.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.futunn.openapi</groupId>
+            <artifactId>futu-api</artifactId>
+            <version>5.5.1708</version>
+        </dependency>
 
     </dependencies>
 

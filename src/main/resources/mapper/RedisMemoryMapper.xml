@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangshuai.crawler.dal.mapper.RedisMemoryMapper">
+
+    <resultMap id="baseResult" type="com.wangshuai.crawler.dal.dataobject.RedisMemoryDO">
+        <result property="id" column="id"/>
+        <result property="redisDatabase" column="redis_database"/>
+        <result property="redisType" column="redis_type"/>
+        <result property="redisKey" column="redis_key"/>
+        <result property="sizeInBytes" column="size_in_bytes"/>
+        <result property="encoding" column="encoding"/>
+        <result property="numElements" column="num_elements"/>
+        <result property="lenLargestElement" column="len_largest_element"/>
+        <result property="expiry" column="expiry"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="column_List">
+        redis_memory.id,
+        redis_memory.redis_database,
+        redis_memory.redis_type,
+        redis_memory.redis_key,
+        redis_memory.size_in_bytes,
+        redis_memory.encoding,
+        redis_memory.num_elements,
+        redis_memory.len_largest_element,
+        redis_memory.expiry,
+        redis_memory.create_time,
+        redis_memory.update_time
+    </sql>
+
+    <insert id="insert" parameterType="com.wangshuai.crawler.dal.dataobject.RedisMemoryDO"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO redis_memory (
+        <include refid="column_List"/>
+        ) VALUES (
+        null,
+        #{redisDatabase},
+        #{redisType},
+        #{redisKey},
+        #{sizeInBytes},
+        #{encoding},
+        #{numElements},
+        #{lenLargestElement},
+        #{expiry},
+        now(),
+        now()
+        )
+    </insert>
+
+    <insert id="batchInsert" parameterType="list" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO redis_memory (
+        <include refid="column_List"/>
+        ) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+            null,
+            #{item.redisDatabase},
+            #{item.redisType},
+            #{item.redisKey},
+            #{item.sizeInBytes},
+            #{item.encoding},
+            #{item.numElements},
+            #{item.lenLargestElement},
+            #{item.expiry},
+            now(),
+            now()
+            )
+        </foreach>
+    </insert>
+
+    <update id="update" parameterType="com.wangshuai.crawler.dal.dataobject.RedisMemoryDO">
+        UPDATE redis_memory
+        <set>
+            <if test="redisDatabase != null">
+                redis_database = #{redisDatabase},
+            </if>
+            <if test="redisType != null and redisType != '' ">
+                redis_type = #{redisType},
+            </if>
+            <if test="redisKey != null and redisKey != '' ">
+                redis_key = #{redisKey},
+            </if>
+            <if test="sizeInBytes != null">
+                size_in_bytes = #{sizeInBytes},
+            </if>
+            <if test="encoding != null and encoding != '' ">
+                encoding = #{encoding},
+            </if>
+            <if test="numElements != null">
+                num_elements = #{numElements},
+            </if>
+            <if test="lenLargestElement != null and lenLargestElement != '' ">
+                len_largest_element = #{lenLargestElement},
+            </if>
+            <if test="expiry != null">
+                expiry = #{expiry},
+            </if>
+            update_time = now()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <update id="batchUpdateById" parameterType="list">
+        <foreach collection="list" item="item" open="" close="" separator=";">
+            UPDATE redis_memory
+            <set>
+                <if test="item.redisDatabase != null">
+                    redis_database = #{item.redisDatabase},
+                </if>
+                <if test="item.redisType != null and item.redisType != '' ">
+                    redis_type = #{item.redisType},
+                </if>
+                <if test="item.redisKey != null and item.redisKey != '' ">
+                    redis_key = #{item.redisKey},
+                </if>
+                <if test="item.sizeInBytes != null">
+                    size_in_bytes = #{item.sizeInBytes},
+                </if>
+                <if test="item.encoding != null and item.encoding != '' ">
+                    encoding = #{item.encoding},
+                </if>
+                <if test="item.numElements != null">
+                    num_elements = #{item.numElements},
+                </if>
+                <if test="item.lenLargestElement != null and item.lenLargestElement != '' ">
+                    len_largest_element = #{item.lenLargestElement},
+                </if>
+                <if test="item.expiry != null">
+                    expiry = #{item.expiry},
+                </if>
+                update_time = now()
+            </set>
+            WHERE id = #{item.id}
+        </foreach>
+    </update>
+
+    <insert id="insertOrUpdate" parameterType="com.wangshuai.crawler.dal.dataobject.RedisMemoryDO"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO redis_memory (
+        <include refid="column_List"/>
+        ) VALUES (
+        null,
+        #{redisDatabase},
+        #{redisType},
+        #{redisKey},
+        #{sizeInBytes},
+        #{encoding},
+        #{numElements},
+        #{lenLargestElement},
+        #{expiry},
+        now(),
+        now()
+        ) ON DUPLICATE KEY UPDATE
+            <if test="redisDatabase != null">
+                redis_database = #{redisDatabase},
+            </if>
+            <if test="redisType != null and redisType != '' ">
+                redis_type = #{redisType},
+            </if>
+            <if test="redisKey != null and redisKey != '' ">
+                redis_key = #{redisKey},
+            </if>
+            <if test="sizeInBytes != null">
+                size_in_bytes = #{sizeInBytes},
+            </if>
+            <if test="encoding != null and encoding != '' ">
+                encoding = #{encoding},
+            </if>
+            <if test="numElements != null">
+                num_elements = #{numElements},
+            </if>
+            <if test="lenLargestElement != null and lenLargestElement != '' ">
+                len_largest_element = #{lenLargestElement},
+            </if>
+            <if test="expiry != null">
+                expiry = #{expiry},
+            </if>
+        update_time = now()
+    </insert>
+
+    <update id="deleteById" parameterType="java.lang.Long">
+        DELETE FROM redis_memory
+        WHERE id = #{id}
+    </update>
+
+    <update id="deleteByIds" parameterType="java.util.List">
+        DELETE FROM redis_memory
+        WHERE id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="findById" resultMap="baseResult" parameterType="java.lang.Long">
+        SELECT
+        <include refid="column_List"/>
+        FROM redis_memory
+        WHERE id = #{id}
+    </select>
+
+    <sql id="query_condition">
+        <where>
+            <if test="id != null">
+                AND redis_memory.id = #{id}
+            </if>
+            <if test="redisDatabase != null">
+                AND redis_memory.redis_database = #{redisDatabase}
+            </if>
+            <if test="redisType != null and redisType != '' ">
+                AND redis_memory.redis_type = #{redisType}
+            </if>
+            <if test="redisKey != null and redisKey != '' ">
+                AND redis_memory.redis_key = #{redisKey}
+            </if>
+            <if test="sizeInBytes != null">
+                AND redis_memory.size_in_bytes = #{sizeInBytes}
+            </if>
+            <if test="encoding != null and encoding != '' ">
+                AND redis_memory.encoding = #{encoding}
+            </if>
+            <if test="numElements != null">
+                AND redis_memory.num_elements = #{numElements}
+            </if>
+            <if test="lenLargestElement != null and lenLargestElement != '' ">
+                AND redis_memory.len_largest_element = #{lenLargestElement}
+            </if>
+            <if test="expiry != null">
+                AND redis_memory.expiry = #{expiry}
+            </if>
+            <if test="createTime != null ">
+                AND redis_memory.create_time = #{createTime}
+            </if>
+            <if test="updateTime != null ">
+                AND redis_memory.update_time = #{updateTime}
+            </if>
+        </where>
+    </sql>
+
+    <select id="countByQuery" parameterType="com.wangshuai.crawler.dal.query.RedisMemoryQuery"
+            resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM redis_memory
+        <include refid="query_condition"/>
+    </select>
+
+    <select id="pageQuery" resultMap="baseResult"
+            parameterType="com.wangshuai.crawler.dal.query.RedisMemoryQuery">
+        SELECT
+        <include refid="column_List"/>
+        FROM redis_memory
+        <include refid="query_condition"/>
+        <choose>
+            <when test="null != sortField and null != sortOrder">
+                ORDER BY ${sortField} ${sortOrder}
+            </when>
+            <otherwise>
+                ORDER BY id DESC
+            </otherwise>
+        </choose>
+        LIMIT #{startPos},#{pageSize}
+    </select>
+
+    <select id="fullQuery" resultMap="baseResult"
+            parameterType="com.wangshuai.crawler.dal.query.RedisMemoryQuery">
+        SELECT
+        <include refid="column_List"/>
+        FROM redis_memory
+        <include refid="query_condition"/>
+        <choose>
+            <when test="null != sortField and null != sortOrder">
+                ORDER BY ${sortField} ${sortOrder}
+            </when>
+            <otherwise>
+                ORDER BY id DESC
+            </otherwise>
+        </choose>
+    </select>
+
+</mapper>
+
